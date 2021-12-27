@@ -12,9 +12,9 @@ let __ = 2;
 let inbox = () => {
   let retval = process.argv[__++];
   if (!retval) {
-    return null
+    return null;
   } else {
-    return retval
+    return retval;
   }
 };
 let outbox = (val) => console.log(val);
@@ -23,28 +23,82 @@ let outbox = (val) => console.log(val);
 // PROGRAM
 //
 
-// for (let c = 0; c < 2;  ) {
-//   let item = inbox()
-//   let secondItem = inbox()
-//   outbox(secondItem)
-//   outbox(item)
-// }
+let a = 1         // number
+let b = 'banana'  // string
+let c = true      // boolean
+let d = false     // boolean
+let e = null      // null
+let f = undefined // undefined
+let g = []        // array
+let h = {}        // object
+let i = function() {} // function
 
-while(hasInbox()) {
-  nextInbox = inbox()
-  if (nextInbox !== 'Eugene') {
-    outbox('Hello ' + nextInbox + '!')
-  } else {
-    outbox('Grrrrr...')
+let obj1 = {
+  name: 'Eugene',
+  age: 35,
+  isAProgrammer: true,
+  bestSellingRecord: null,
+  siblings: ['Yuliya', 'Ben'],
+  friends: ['Jeremiah', 'Others'],
+}
+
+
+console.log(obj1.name) 
+console.log(obj1.friends[0])
+
+let obj2 = [
+  {
+    name: 'Eugene',
+    age: 35,
+    isAProgrammer: true,
+    bestSellingRecord: null,
+    siblings: ['Yuliya', 'Ben'],
+    friends: ['Jeremiah', 'Others'],
+  },
+  {
+    name: 'Eugene Clone',
+    age: 3,
+    isAProgrammer: false,
+    bestSellingRecord: null,
+    siblings: ['Yuliya Clone', 'Ben Clone'],
+    friends: ['Jeremiah Clone', 'Others Clone'],
+  }
+]
+
+console.log(obj2[1].friends[0])
+console.log(obj2[0].siblings[1])
+
+let arr1 = []
+
+console.log(arr1.length)
+
+console.log(obj1['name'])
+console.log(obj1.name)
+
+let input = process.argv[2] // Let's say I typed: 'name'
+
+console.log(obj1.name)
+
+let getExchangeRate = function(countryInput) {
+  const response = fetch('kdsfldsjnflsdn')
+  const data = response.json()
+
+  for(let i = 0; i < data.data.length; i++) {
+    if (data.data[i].country == countryInput) {
+      return data.data[i].exchange_rate
+    }
   }
 }
 
-let nextInbox
-while(nextInbox !== null) do {
-  nextInbox = inbox()
-  if (nextInbox !== 'Eugene') {
-    outbox('Hello ' + nextInbox + '!')
-  } else {
-    outbox('Grrrrr...')
-  }
+if (getExchangeRate('Canada') > getExchangeRate('Zimbabwe')) {
+  tradeSomeBitcoin()
 }
+
+const boardgames = [
+  {
+    
+  },
+  {}
+]
+
+const game = boardgames[Math.floor((Math.random() * boardgames.length))]
